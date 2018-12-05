@@ -12,10 +12,13 @@ export async function onCreateNode({ node, actions, cache, reporter }: any) {
   if (!process.env.FLICKR_API_KEY) {
     return;
   }
-  if (!node.frontmatter || !node.frontmatter.flickrSet) {
+  if (!node.frontmatter) {
     return;
   }
-  const setId = node.frontmatter.flickrSet;
+  const setId = node.frontmatter.flickrSet || node.frontmatter.flickr_set;
+  if (!setId) {
+    return;
+  }
   let photos: Array<Photo> | null = null;
   try {
     const cacheKey = `flickr-set-${setId}`;
@@ -26,9 +29,7 @@ export async function onCreateNode({ node, actions, cache, reporter }: any) {
     }
   } catch (err) {
     reporter.panicOnBuild(
-      `Error fetching FlickrSet ${node.fromatter.flickrSet} for node ${
-        node.id
-      }\n${err}`
+      `Error fetching FlickrSet ${setId} for node ${node.id}\n${err}`
     );
   }
   if (!photos) {
@@ -36,7 +37,7 @@ export async function onCreateNode({ node, actions, cache, reporter }: any) {
   }
   const flickrNode = FlickrSetNode(
     {
-      id: setId,
+      id: node.id + setId,
       photos
     },
     {
