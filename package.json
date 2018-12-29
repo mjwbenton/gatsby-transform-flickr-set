@@ -8,7 +8,7 @@
     "build": "tsc"
   },
   "author": "Matt Benton <m@mattb.tech>",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "dependencies": {
     "@mattb/flickr-api": "file:../flickr-api",
     "@types/node": "^10.12.11",
