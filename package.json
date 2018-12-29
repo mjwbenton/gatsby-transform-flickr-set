@@ -10,7 +10,7 @@
   "author": "Matt Benton <m@mattb.tech>",
   "license": "MIT",
   "dependencies": {
-    "@mattb/flickr-api": "file:../flickr-api",
+    "@mattb/flickr-api": "git+ssh://git@github.com/mjwbenton/flickr-api.git",
     "@types/node": "^10.12.11",
     "gatsby-node-helpers": "^0.3.0",
     "typescript": "^3.2.1"
