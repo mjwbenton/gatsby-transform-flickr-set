@@ -1,2 +1,2 @@
-import { Photo, PhotoSource } from "@mattb/flickr-api";
+import { Photo, PhotoSource } from "@mattb.tech/flickr-api";
 export { Photo, PhotoSource };

@@ -1,18 +1,25 @@
 {
-  "name": "@mattb/gatsby-transform-flickr-set",
+  "name": "@mattb.tech/gatsby-transform-flickr-set",
   "version": "1.0.0",
-  "description": "",
+  "description": "Gatsby transform to fetch references to flickr sets",
   "main": "index.js",
   "types": "index.d.ts",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "prepare": "npm run build"
   },
   "author": "Matt Benton <m@mattb.tech>",
   "license": "MIT",
   "dependencies": {
-    "@mattb/flickr-api": "git+ssh://git@github.com/mjwbenton/flickr-api.git",
+    "@mattb.tech/flickr-api": "^1.0.0",
+    "gatsby-node-helpers": "^0.3.0"
+  },
+  "devDependencies": {
     "@types/node": "^10.12.11",
-    "gatsby-node-helpers": "^0.3.0",
     "typescript": "^3.2.1"
-  }
+  },
+  "files": [
+    "*.js",
+    "*.d.ts"
+  ]
 }

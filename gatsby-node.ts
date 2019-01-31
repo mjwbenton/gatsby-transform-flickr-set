@@ -1,4 +1,4 @@
-import { getPhotoSet, Photo } from "@mattb/flickr-api";
+import { getPhotoSet, Photo } from "@mattb.tech/flickr-api";
 import createNodeHelpers from "gatsby-node-helpers";
 
 const { createNodeFactory } = createNodeHelpers({
